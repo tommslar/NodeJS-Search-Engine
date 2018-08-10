@@ -63,9 +63,6 @@ var atributos = Array();
 }
 
 
-// rutear tipo api, y que para cada dirección que pongan haga una petición distinta
-// desde el cliente hago el ajax y le indico que var le mando
-
 Router.get('/todos', function(req, res){
 		res.send(Storage);
 		res.end();
@@ -83,7 +80,7 @@ Router.get('/tipos', function(req, res){
 
 
 
-
+/*
 var urlParams = '/ciudad/'{cualquier ciudad}'/tipo/'cualquier tipo'/precio/'{cualquier precio} ;
 
 Router.get(urlParams, function(req, res){
@@ -93,15 +90,7 @@ Router.get(urlParams, function(req, res){
 		//res.send(buscar('New York','Casa','$30,746'));
 		res.end();
 	})
-
-
-//buscar como construir una api json con sus rutas
-
-//deberia poder hacer: /buscar/{ciudad, id, precio}
-//tomar esos parametros y aplicarlos en el método buscar
-// var filtrado = json.filter(function (v){return v.Nombre == 'miguel' && v.id_sede == 2});
-
-
+*/
 
 //documentación:
 // https://openclassrooms.com/en/courses/4387551-crea-paginas-web-interactivas-con-javascript/4476366-envia-peticiones-ajax-al-servidor
