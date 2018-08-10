@@ -156,7 +156,13 @@ function cargarFiltradas(filtros){
   });
 }
 
-//hacer una function que resuelva lo del click en ver todos para reutilizar ante el change()
+function setFiltros(){
+  var c1 = $("#ciudad").val();
+  var t1 = $("#tipo").val();
+  var p1 = $("#rangoPrecio").val();
+  var filtro = {Ciudad: c1, Tipo: t1, Precio: p1}
+  cargarFiltradas(filtro);
+}
 
 function init(){
   //ejecuto las funciones para que se pueda visualizar en el select
@@ -165,27 +171,27 @@ function init(){
   setTimeout(()=>{
       $('select').material_select();
     },1000);
-  //ejecutar carga de propiedades
-  cargarPropiedades();
+  boton_switch = $(".switch").find("input[type=checkbox]");
   //acción del click sobre el botón 'ver todos':
- // $("div[name='clasificado']").empty("");
   $("#buscar").click(()=>{
-    var c1 = $("#ciudad").val();
-    var t1 = $("#tipo").val();
-    var p1 = $("#rangoPrecio").val();
-    var filtro = {Ciudad: c1, Tipo: t1, Precio: p1}
-    cargarFiltradas(filtro);
-    })
+    cargarPropiedades();
+  })
   //actualizar dinámicamente la lista si aparece un cambio en los filtros:
   $("#tipo, #ciudad, #rangoPrecio").change(()=>{
-    var c1 = $("#ciudad").val();
-    var t1 = $("#tipo").val();
-    var p1 = $("#rangoPrecio").val();
-    var filtro = {Ciudad: c1, Tipo: t1, Precio: p1}
-    cargarFiltradas(filtro);
+    cargarPropiedades();
+    setFiltros() 
   })
+  // cambios por si se activa/desactiva el switch
+  boton_switch.on("change",function() {
+      var checked = $(this).prop('checked');
+      if (checked == false) { 
+        $("#contenedor").html("");
+        cargarPropiedades();
+      }
+  });
 }
 
 
+//iniciar buscador
 init();
 
