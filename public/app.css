@@ -46,3 +46,7 @@ div.lista {
   width: 50%;
   margin: 0 auto !important;
 }
+
+.card.horizontal .card-image {
+    padding: 25px;
+}
