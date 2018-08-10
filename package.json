@@ -1,0 +1,16 @@
+{
+  "name": "search_engine",
+  "version": "1.0.0",
+  "description": "buscador con filtros sobre un archivo json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/" 
+  },
+  "author": "tomas larrauri",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
